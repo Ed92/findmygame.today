@@ -131,38 +131,49 @@
 
 ?>
 
-<?php 
-require_once 'parts/head.php';
-?>
-  <style type="text/css">
-  	body{
-  		background-imdob: url('background.jpg')
-  	}
-  	#box{
-      background-color: rgba(255,255,255,0.6);
-      padding: 10%;
-    }
-  </style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login V12</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
+  
 <body>
-<header id="header" class="">
-		<div class="row">
-			<div class="col-md-5">
-				<h1>Source_Code_Café</h1>
-			</div>
-			
-		</div>
-</header><!-- /header -->
- 	<div class="container">
-    	<div class="row">
-			<div class="col-lg-4 col-md-4 col-4"></div>
 
-			<div class="col-lg-5 col-md-5 col-5 offset-lg-5 offset-md-5 col-offset-5" id="box">
+ 	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/pokemon.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
 			    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-			        <h2>Sign Up.</h2>
-					
-					<a href="index.php">Sign in Here...</a>
-			        <hr />
+			        
+					<div class="login100-form-avatar">
+						<img src="images/char.jpeg" alt="AVATAR">
+					</div>
+
+					<span class="login100-form-title p-t-20 p-b-45">
+				        <h2>Sign Up.</h2>
+						
+						<a href="login.php">Sign in Here...</a>
+				        <hr />
+			    	</span>
 
 			        <?php
 						if ( isset($errMSG) ) {
@@ -176,41 +187,58 @@ require_once 'parts/head.php';
 
 			   			}
 					?>
-
-					<input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50"/>
-
-					<span class="text-danger"><?php echo $nameError; ?></span>
-
-					<input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40"/>
-
-					<span class="text-danger"><?php echo $emailError; ?></span>
-
-					<input type="text" name="dob" class="form-control" placeholder="Enter your date of birth" maxlength="50"/>
-
-					<span class="text-danger"><?php echo $dobError; ?></span>
-
-					<input type="text" name="avatar" class="form-control" placeholder="insert a pic" maxlength="50"/>
-
 					
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+						<input type="text" name="name" class="input100" placeholder="Enter Name" maxlength="50"/>
 
-					<input type="text" name="discord" class="form-control" placeholder="sour discordname" maxlength="50"/>
+						<span class="text-danger"><?php echo $nameError; ?></span>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
 
-					<input type="text" name="fave_games" class="form-control" placeholder="your fave games" maxlength="50"/>
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Email is required">
 
+						<input type="email" name="email" class="input100" placeholder="Enter Your Email" maxlength="40"/>
 
-					<input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
+						<span class="text-danger"><?php echo $emailError; ?></span>
+					</div>
 
-					<span class="text-danger"><?php echo $passError; ?></span>
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "dob is required">
+
+						<input type="text" name="dob" class="input100" placeholder="Enter your date of birth" maxlength="50"/>
+
+						<span class="text-danger"><?php echo $dobError; ?></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "pic is required">
+						<input type="text" name="avatar" class="input100" placeholder="insert a pic" maxlength="50"/>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "discord is required">
+						<input type="text" name="discord" class="input100" placeholder="sour discordname" maxlength="50"/>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "fave games is required">
+						<input type="text" name="fave_games" class="input100" placeholder="your fave games" maxlength="50"/>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+						<input type="password" name="pass" class="input100" placeholder="Enter Password" maxlength="15" />
+
+						<span class="text-danger"><?php echo $passError; ?></span>
+					</div>
 
 					<hr />
-
-					<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
-           
-				</div>
-			</div>
-		</div>
-    </form>
-
+					<div class="container-login100-form-btn p-t-10">
+						<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+					</div>
+				 </form>
+           	</div>
+        </div>
+    </div>
+   
 </body>
 </html>
 <?php ob_end_flush(); ?>

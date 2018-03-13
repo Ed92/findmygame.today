@@ -77,57 +77,87 @@
 require_once 'parts/head.php'
 
 ?>
-  <style>
-    body{
-      background-image: url('img/bg.png'); 
-    }
-  </style>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login V12</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-	<header id="header" class="">
-		<div class="row">
-			<div class="col-md-4 col-lg-4 col-4">
-				<h1>big events!</h1>
-			</div>
-			
-		</div>
-	</header><!-- /header -->
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/pokemon.jpg');">
+      <div class="wrap-login100 p-t-190 p-b-30">
 
-  <div class="container">
-    <div class="row login_register_div">
-      <div class="col-lg-4 col-md-4 col-4">
-        
-      </div>
-      <div class="col-lg-5 col-md-5 col-5 offset-lg-5 offset-md-5 col-offset-5" id="box">
-        
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+          
+          <div class="login100-form-avatar">
+            <img src="images/char.jpeg" alt="AVATAR">
+          </div>
 
-          <h2>Sign In.</h2>
-          <a href="register.php">Sign Up Here...</a>
+          <span class="login100-form-title p-t-20 p-b-45">
+            <h2>Sign In.</h2>
+            <a href="register.php">Sign Up Here...</a>
+          </span>
+
           <hr />
 
           <?php
             if ( isset($errMSG) ) {
-              echo $errMSG; ?>
-
-            <?php
+              echo $errMSG;
             }
 
           ?>
-          <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
 
-          <span class="text-danger"><?php echo $emailError; ?></span>
+            <input type="email" name="email" class="input100" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
 
-          <input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="15" />
+            <span class="text-danger focus-input100"><?php echo $emailError; ?></span>
+      
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
 
-          <span class="text-danger"><?php echo $passError; ?></span>
+          <div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+            <input type="password" name="pass" class="input100" placeholder="Your Password" maxlength="15" />
+
+            <span class="text-danger focus-input100"><?php echo $passError; ?></span>
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
 
           <hr />
 
-          <button type="submit" name="btn-login" class="btn btn-primary">Sign In</button>
-          <td><a href="index.php"><button type="button" class="btn btn-primary">Back</button></a></td>
-          
+          <div class="container-login100-form-btn p-t-10">
+            <button type="submit" name="btn-login" class="btn btn-primary btn_login">Sign In</button>
+            
+            <td><a href="index.php"><button type="button" class="btn btn-primary btn_login">Back</button></a></td>
+          </div>
+
         </form>
            
       </div>
