@@ -312,6 +312,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-family: 'Play-Bold';
 	text-align:center;
  }
+ .top-games{
+  text-align: center,
+ }
 .game-grid{
 	text-align:center;
  }
@@ -1977,7 +1980,8 @@ ul.callbacks_tabs.callbacks1_tabs {
   font-size: 0.8em;
 }
 .content {
-  padding: 3em 0;
+  /* padding: 3em 0; */
+  margin-top: 0;
 }
 .top-games h3, .latest-games h3 {
   font-size: 1.75em;
