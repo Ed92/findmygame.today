@@ -1,3 +1,4 @@
+<?php 
 $sql = "SELECT user_id, lastname, firstname FROM Users";
 
 $result = mysqli_query($conn, $sql);
@@ -21,3 +22,4 @@ mysqli_free_result($result);
 // Close connection
 
 mysqli_close($conn);
+ ?>

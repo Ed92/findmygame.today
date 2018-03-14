@@ -1,5 +1,5 @@
 <?php 
-
+	require_once 'actions/db_connect.php';
 ?>
 <!--A Design by W3layouts
 Author: W3layout
@@ -127,6 +127,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- content -->
 <div class="content">
 	 <div class="container">
+		
+		<?php
+            $sql = "SELECT * FROM groups ";
+            $result = $conn->query($sql);
+
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='row'>
+                    		<div class='col-md-4 col-lg-4 col-4'>
+                    			<h1>
+                    				".$row['group_name']."
+                    			</h1>
+                    			<h4>".$row['scheduling']."</h4>
+                    			<h4>".$row['target_audience']."</h4>
+                    			<p>".$row['description']."</p>
+                    			<span>".$row['open_spots']."</span>
+								
+								<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
+                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
+                    		</div>
+                         
+                            ";
+                }
+            } else {
+               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+            }
+        ?>
+
 		 <div class="top-games">
 			 <h3>Top Games</h3>
 			 <span></span>
