@@ -1,22 +1,46 @@
 <?php
 
-	require_once 'db_connect.php';
+ 
 
-	if($_POST) {
+require_once 'db_connect.php';
 
-	    $capacity = $_POST['capacity'];
-	    
+ 
 
-	 
-	    $sql = "INSERT INTO tables (capacity) VALUES ('$capacity')";
+if($_POST) {
 
-	    if($conn->query($sql) === TRUE) {
-	        echo "<p>New Record Successfully Created</p>";
-	        echo "<a href='../create.php'><button type='button'>Back</button></a>";
-	        echo "<a href='../index.php'><button type='button'>Home</button></a>";
-	    } else {
-	        echo "Error " . $sql . ' ' . $conn->connect_error;
-	    }
-	    $conn->close();
-	}
+    $groupname = $_POST['groupname'];
+
+    $description = $_POST['description'];
+
+    $scheduling = $_POST['scheduling'];
+
+    $targetaudience = $_POST['targetaudience'];
+
+    $groupsize = $_POST['groupsize'];
+
+            
+    $sql = "INSERT INTO groups (group_name, description, scheduling, target_audience, open_spots) VALUES ('$groupname', '$description', '$scheduling', '$targetaudience',  '$groupsize' )";
+
+    if($conn->query($sql) === TRUE) {
+
+        echo "<p>New Record Successfully Created</p>";
+
+        echo "<a href='../create.php'><button type='button'>Back</button></a>";
+
+        echo "<a href='../home.php'><button type='button'>Home</button></a>";
+
+    } else {
+
+        echo "Error " . $sql . ' ' . $conn->connect_error;
+
+    }
+
+ 
+
+    $conn->close();
+
+}
+
+ 
+
 ?>

@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/bootstrap.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style1.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -127,33 +128,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- content -->
 <div class="content">
 	 <div class="container">
-		
-		<?php
-            $sql = "SELECT * FROM groups ";
-            $result = $conn->query($sql);
+		<div class='row'>
+			<?php
+	            $sql = "SELECT * FROM groups";
+	            $result = $conn->query($sql);
 
-            if($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<div class='row'>
-                    		<div class='col-md-4 col-lg-4 col-4'>
-                    			<h1>
-                    				".$row['group_name']."
-                    			</h1>
-                    			<h4>".$row['scheduling']."</h4>
-                    			<h4>".$row['target_audience']."</h4>
-                    			<p>".$row['description']."</p>
-                    			<span>".$row['open_spots']."</span>
-								
-								<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
-                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
-                    		</div>
-                         
-                            ";
-                }
-            } else {
-               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-            }
-        ?>
+	            if($result->num_rows > 0) {
+	                while($row = $result->fetch_assoc()) {
+	                    echo "
+	                    		<div class='col-md-4 col-lg-4 col-4'>
+	                    			<h1>
+	                    				".$row['group_name']."
+	                    			</h1>
+	                    			<h4>".$row['scheduling']."</h4>
+	                    			<h4>".$row['target_audience']."</h4>
+	                    			<p>".$row['description']."</p>
+	                    			<span>".$row['open_spots']."</span>
+									
+									<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
+	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
+	                    		</div>
+
+	                            ";
+	                }
+	            } else {
+	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+	            }
+	        ?>
+	       </div>
+	        <a href="create.php"><button type="button">Add New Group</button></a>
 
 		 <div class="top-games">
 			 <h3>Top Games</h3>
