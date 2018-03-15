@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <!--<div class="header">
 		 <div class="container">
 			 <div class="headr-left">
-				 <div class="social">							
+				 <div class="social">
 						<p style="color: white;">Find my Game Today</p>
 				 </div>
 				 <div class="clearfix"></div>
@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <div class="clearfix"></div>
 		 </div>
 	 </div> -->
-	 <!--banner-info-->	
+	 <!--banner-info-->
 	 <div class="banner-info">
 		  <div class="container">
 			  <div class="logo">
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 <li><a href="about.html">About</a></li>
 						 <li><a href="contact.html">Contact</a></li>
 				  </ul>
-			 </div>	
+			 </div>
 	 <!-- script-for-menu -->
 						<script>
 							 $( "span.menu" ).click(function() {
@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						</script>
 					<!-- /script-for-menu -->
-			 
+
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
@@ -88,35 +88,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			pager:true,
 		  });
 		});
-		
+
 	   </script>
 	 <div class="slider">
 		  <div class="callbacks_container">
 			  <ul class="rslides" id="slider">
-				
+
 					<div class="slid banner1">
 						  <div class="caption">
 								<h3>Create your own Group</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					</div>
-				
-				
-					 <div class="slid banner2">	
+
+
+					 <div class="slid banner2">
 						  <div class="caption">
 								<h3>Strengthen your skills</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					 </div>
-				
-				
-					<div class="slid banner3">	
+
+
+					<div class="slid banner3">
 						<div class="caption">
 							<h3>Be resepectful to your other group members.</h3>
 							<p>Create a team, play in your groups, create connections.</p>
 						</div>
 					</div>
-				
+
 			  </ul>
 		 </div>
 	 </div>
@@ -127,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="top-games">
 		 	<h3>WE CONNECT GAMERS</h3>
 		 	<br>
-		 	<?php 
+		 	<?php
 		 		$sql = "SELECT count(*) as 'count' FROM `groups`";
 			    $result = $conn->query($sql);
 
@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <div class="game-grid">
 						 <h4>Action Games</h4>
 						 <img src="images/t1.jpg" class="img-responsive" alt=""/>
-					 </div>	
+					 </div>
 				 </li>
 				 <li>
 					 <div class="game-grid">
@@ -162,29 +162,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <div class="game-grid">
 						 <h4>Arcade Games</h4>
 						 <img src="images/t2.jpg" class="img-responsive" alt=""/>
-					 </div>	
-				 </li>				 				 	
+					 </div>
+				 </li>
 			 </ul>
-			 
+
 			 <script type="text/javascript">
-			 $(window).load(function() {			
+			 $(window).load(function() {
 			  $("#flexiselDemo1").flexisel({
 				visibleItems: 4,
 				animationSpeed: 1000,
 				autoPlay: true,
-				autoPlaySpeed: 3000,    		
+				autoPlaySpeed: 3000,
 				pauseOnHover:true,
 				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
+				responsiveBreakpoints: {
+					portrait: {
 						changePoint:480,
 						visibleItems: 1
-					}, 
-					landscape: { 
+					},
+					landscape: {
 						changePoint:640,
 						visibleItems: 2
 					},
-					tablet: { 
+					tablet: {
 						changePoint:768,
 						visibleItems: 3
 					}
@@ -192,7 +192,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 			});
 			</script>
-			<script type="text/javascript" src="js/jquery.flexisel.js"></script>	
+			<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 		 </div>
 	 </div>
 </div>
@@ -214,8 +214,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="footer-grids">
 			 <div class="col-md-3 ftr-info">
 				 <h3>About Us</h3>
-				 <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus. 
-				 Suspendisse pharetra, metus sed rutrum pretium.</p>
+				 <p>Find my game is platform to unite Gamers and make it easier to find and join games.</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Categories</h3>
@@ -225,27 +224,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="#">Adventure</a></li>
 					 <li><a href="#">Simulation</a></li>
 					 <li><a href="#">Bike</a></li>
-				 </ul>				 
+				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Platform</h3>
 				 <ul class="ftr-list">
 					 <li><a href="#">Pc</a></li>
 					 <li><a href="#">Ps4</a></li>
-					 <li><a href="#">XBOX 360</a></li>					 
+					 <li><a href="#">XBOX 360</a></li>
 					 <li><a href="#">XBOX ONE</a></li>
 					 <li><a href="#">PSP</a></li>
-				 </ul>				 
+				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Information</h3>
-				 <ul class="ftr-list">	
+				 <ul class="ftr-list">
 					 <li><a href="#">Contact Us</a></li>
 					 <li><a href="#">Wish Lists</a></li>
 					 <li><a href="#">Site Map</a></li>
-					 <li><a href="#">Terms & Conditions</a></li>					 
-				 </ul>				 
-			 </div>		
+					 <li><a href="#">Terms & Conditions</a></li>
+				 </ul>
+			 </div>
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
@@ -253,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 <div class="copywrite">
 	 <div class="container">
-		 <p> © 2015 Game Box. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		 <p> © 2018 findmygame. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 	 </div>
 </div>
 <!---->
