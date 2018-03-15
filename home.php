@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once 'actions/db_connect.php';
 ?>
 <!--A Design by W3layouts
@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <!--<div class="header">
 		 <div class="container">
 			 <div class="headr-left">
-				 <div class="social">							
+				 <div class="social">
 						<p style="color: white;">Find my Game Today</p>
 				 </div>
 				 <div class="clearfix"></div>
@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <div class="clearfix"></div>
 		 </div>
 	 </div> -->
-	 <!--banner-info-->	
+	 <!--banner-info-->
 	 <div class="banner-info">
 		  <div class="container">
 			  <div class="logo">
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          <li><a href="profile.php">Profile</a></li>
                          <li><a href="logout.php?logout">Log Out</a></li>
 				  </ul>
-			 </div>	
+			 </div>
 	 <!-- script-for-menu -->
 						<script>
 							 $( "span.menu" ).click(function() {
@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						</script>
 					<!-- /script-for-menu -->
-			 
+
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
@@ -92,41 +92,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			pager:true,
 		  });
 		});
-		
+
 	   </script>
 	 <div class="slider">
 		  <div class="callbacks_container">
 			  <ul class="rslides" id="slider">
-				
+
 					<div class="slid banner1">
 						  <div class="caption">
 								<h3>Create your own Group</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					</div>
-				
-				
-					 <div class="slid banner2">	
+
+
+					 <div class="slid banner2">
 						  <div class="caption">
 								<h3>Strengthen your skills</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					 </div>
-				
-				
-					<div class="slid banner3">	
+
+
+					<div class="slid banner3">
 						<div class="caption">
 							<h3>Be resepectful to your other group members.</h3>
 							<p>Create a team, play in your groups, create connections.</p>
 						</div>
 					</div>
-				
+
 			  </ul>
 		 </div>
 	 </div>
 
 <!-- content -->
-<div class="content" style="background-color: white;>
+<div class="content">
 	 <div class="container">
 		<div class='row'>
 			<?php
@@ -135,49 +135,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	            if($result->num_rows > 0) {
 	                while($row = $result->fetch_assoc()) {
-	                    echo "
-	                    		<div class='col-md-4 col-lg-4 col-4'>
-	                    			<h1>
-	                    				".$row['group_name']."
-	                    			</h1>
-	                    			<h4>".$row['scheduling']."</h4>
-	                    			<h4>".$row['target_audience']."</h4>
-	                    			<p>".$row['description']."</p>
-	                    			<span>".$row['open_spots']."</span>
-									
+	                    echo "<div class='table table-dark'>
+											<table class="table table-dark">
+												<thead>
+												<tr>
+													<th scope="col">Group name: </th>
+													<th scope="col">Scheduling: </th>
+													<th scope="col">Target audience: </th>
+													<th scope="col">Description: </th>
+													<th scope="col">Nr. of members: </th>
+												</tr>";
+
+
+												</thead>
+												<tbody>
+												while($row = $result -> fetch_assoc()) {
+												echo "<tr>
+
+
+													<td>".$row['group_name']."</td>
+													<td>".$row['scheduling']."</td>
+													<td>".$row['target_audience']."</td>
+													<td>".$row['description']."</td>
+												</tr>
+												}
+												echo"</table></div>";
+
+												</tbody>
+												</table>
+
 									<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
 	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
 	                    		</div>
 
 	                            ";
 	                }
-	            } else {
-	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-	            }
+	            } 
 	        ?>
-	        <div style="float: right; flex-wrap: wrap; display: flex-wrap">
-	        	
-	        <script id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
-    {
-        "handle": "findmygame123",
-        "arch": "js",
-        "styles": {
-            "a": "000066",
-            "b": 100,
-            "c": "FFFFFF",
-            "d": "FFFFFF",
-            "k": "000066",
-            "l": "000066",
-            "m": "000066",
-            "n": "FFFFFF",
-            "p": "10",
-            "q": "000066",
-            "r": 100,
-            "fwtickm": 1
-        }
-    }
-</script></div>
-
 	       </div>
 	        <a href="create.php"><button type="button">Add New Group</button></a>
 
@@ -191,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <div class="game-grid">
 						 <h4>Action Games</h4>
 						 <img src="images/t1.jpg" class="img-responsive" alt=""/>
-					 </div>	
+					 </div>
 				 </li>
 				 <li>
 					 <div class="game-grid">
@@ -209,29 +203,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <div class="game-grid">
 						 <h4>Arcade Games</h4>
 						 <img src="images/t2.jpg" class="img-responsive" alt=""/>
-					 </div>	
-				 </li>				 				 	
+					 </div>
+				 </li>
 			 </ul>
-			 
+
 			 <script type="text/javascript">
-			 $(window).load(function() {			
+			 $(window).load(function() {
 			  $("#flexiselDemo1").flexisel({
 				visibleItems: 4,
 				animationSpeed: 1000,
 				autoPlay: true,
-				autoPlaySpeed: 3000,    		
+				autoPlaySpeed: 3000,
 				pauseOnHover:true,
 				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
+				responsiveBreakpoints: {
+					portrait: {
 						changePoint:480,
 						visibleItems: 1
-					}, 
-					landscape: { 
+					},
+					landscape: {
 						changePoint:640,
 						visibleItems: 2
 					},
-					tablet: { 
+					tablet: {
 						changePoint:768,
 						visibleItems: 3
 					}
@@ -239,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 			});
 			</script>
-			<script type="text/javascript" src="js/jquery.flexisel.js"></script>	
+			<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 		 </div>
 	 </div>
 </div>
@@ -299,7 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 <div class="copywrite">
 	 <div class="container">
-		 <p> © 2015 Game Box. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		 <p> © 2018 findmygame. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 	 </div>
 </div>
 <!---->
