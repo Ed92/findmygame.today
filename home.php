@@ -71,7 +71,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav1">
 						 <li class="active"><a href="index.php">Home</a></li>
                          <li><a href="about.html">About</a></li>
-                         <li><a href="groups.php">Groups</a></li>
                          <li><a href="profile.php">Profile</a></li>
                          <li><a href="logout.php?logout">Log Out</a></li>
 				  </ul>
@@ -138,9 +137,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div style="flex-wrap:wrap; display: flex-wrap; ">
 	
 <!-- content -->
-<div class="content">
+<div class="content" style="background-color: black; color:white;">
 	 <div class="container">
-	 	<a href="create.php"><button type="button">Add New Group</button></a>
+	 	<a href="create.php"><button style="margin-bottom: 30px; margin-left: 20px;" type="button">Add New Group</button></a>
 		
 		<div class='row'>
 			<?php
@@ -153,15 +152,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	                while($row = $result->fetch_assoc()) {
 	                    echo "
 	                    		<div class='col-md-4 col-lg-4 col-4'>
-	                    			<h1><a href='group.php?id=".$row['groups_id']."'>
+	                    			<h1><a  href='group.php?id=".$row['groups_id']."'>
 	                    				".$row['group_name']."
 	                    				</a>
+	                    				<hr>
 	                    			</h1>
-	                    			<h4>".$row['scheduling']."</h4>
-	                    			<h4>".$row['target_audience']."</h4>
-	                    			<p>".$row['description']."</p>
+	                    			<h3>".$row['scheduling']."</h3>
+	                    			<h3>".$row['target_audience']."</h3>
+	                    			<h3>".$row['description']."</h3>
 	                    			<span>".$row['open_spots']."</span>
-	                    			";
+	                    			 <hr>"; 
 							if ($data_admin == 1) {
 								echo
 								"<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</div>
 
-		<script id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
+		<script class='col-md-4 col-lg-4 col-4' id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
 			    {
 			        "handle": "findmygame123",
 			        "arch": "js",
