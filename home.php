@@ -38,6 +38,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script src="js/jquery.min.js"></script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 </head>
 <body>
 <!-- header -->
@@ -137,9 +139,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div style="flex-wrap:wrap; display: flex-wrap; ">
 	
 <!-- content -->
-<div class="content" style="background-color: black; color:white;">
+<div class="content">
 	 <div class="container">
-	 	<a href="create.php"><button style="margin-bottom: 30px; margin-left: 20px;" type="button">Add New Group</button></a>
+	 	<a href="create.php"><button style="margin-bottom: 30px; margin-left: 20px;" type="button" class="btn">Add New Group</button></a>
 		
 		<div class='row'>
 			<?php
@@ -151,7 +153,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            if($result->num_rows > 0) {
 	                while($row = $result->fetch_assoc()) {
 	                    echo "
-	                    		<div class='col-md-4 col-lg-4 col-4'>
+	                    		<div class='col-md-4 col-lg-4 col-4 group_box'>
+	                    			<div class='inner_box'>
+	                    			
 	                    			<h1><a  href='group.php?id=".$row['groups_id']."'>
 	                    				".$row['group_name']."
 	                    				</a>
@@ -159,17 +163,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	                    			</h1>
 	                    			<h3>".$row['scheduling']."</h3>
 	                    			<h3>".$row['target_audience']."</h3>
-	                    			<h3>".$row['description']."</h3>
-	                    			<span>".$row['open_spots']."</span>
+	                    			<div class='descriptionbox'>
+	                    				<p>".$row['description']."</p>
+	                    			</div>
+	                    			
+	                    			<span>Open spots: ".$row['open_spots']."</span>
 	                    			 <hr>"; 
 							if ($data_admin == 1) {
 								echo
-								"<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
-	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
+								"<a href='update.php?id=".$row['groups_id']."'><button type='button'class='btn'>Edit</button></a>
+	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button' class='btn'>Delete</button></a>
 	                            
 	                    		";
 							};
-							echo "</div>";	
+							echo "</div></div>";	
 	                }
 	            } else {
 	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";

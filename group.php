@@ -1,8 +1,17 @@
 <?php  
-	if($_GET['id']) {
-    	$id = $_GET['id'];
-    	$sql = "SELECT * FROM `groups`
-    		WHERE id = {$id}";
+	require_once 'actions/db_connect.php';
+
+if($_GET['id']) {
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM `groups`
+                    WHERE id = {$id}";
+
+    $result = $conn->query($sql);
+
+    $data = $result->fetch_assoc();
+
+	$data_admin = $userRow['user_type'];
 ?>
 
 <!--A Design by W3layouts
@@ -98,60 +107,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="bnr2">						  
 	   </div>			 
 </div>
-<!----> 
-<div class="gallery">
+<!---->
 		<div class="container">
-			<h2>Gallery</h2>
-			<div class="gallery-bottom">
-				<div class="gallery-1">
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/r4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r4.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl5.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl5.jpg" alt=""/></a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="gallery-1">
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl6.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl6.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl2.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl2.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/r6.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r6.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="gallery-1">
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/r3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r3.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/r4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r4.jpg" alt=""/></a>
-					</div>
-					<div class="col-md-3 gallery-grid">
-						<a class="example-image-link" href="images/gl11.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl11.jpg" alt=""/></a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
+			<?php 
+			 echo "
+                	<div class='box'>
+                		<h1>".$row['group_name']."</h1>
+                		<hr>
+                		<h3>".$row['scheduling']."</h3>
+                		<h3>".$row['target_audience']."</h3>
+                		<div class='descriptionbox'>
+                			<p>".$row['description']."</p>
+                		</div>
+                		<span>Open spots: ".$row['open_spots']."</span>
+                			 <hr>; 
+					</div>";	
+           
+        		// $conn->close();
+			?>
+		</div>
 				
-		 </div>
-	 </div>
-</div>	
 <script src="js/lightbox-plus-jquery.min.js"></script>
 <!-- footer -->
 <div class="footer">
