@@ -1,5 +1,15 @@
-<?php 
+<?php
 	require_once 'actions/db_connect.php';
+
+	ob_start();
+	session_start();
+
+	$res=mysqli_query($conn, "SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+	// echo $_SESSION['user'];
+	$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+	$data_admin = $userRow['user_type'];
+
 ?>
 <!--A Design by W3layouts
 Author: W3layout
@@ -21,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -34,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <!--<div class="header">
 		 <div class="container">
 			 <div class="headr-left">
-				 <div class="social">							
+				 <div class="social">
 						<p style="color: white;">Find my Game Today</p>
 				 </div>
 				 <div class="clearfix"></div>
@@ -49,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <div class="clearfix"></div>
 		 </div>
 	 </div> -->
-	 <!--banner-info-->	
+	 <!--banner-info-->
 	 <div class="banner-info">
 		  <div class="container">
 			  <div class="logo">
@@ -64,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          <li><a href="profile.php">Profile</a></li>
                          <li><a href="logout.php?logout">Log Out</a></li>
 				  </ul>
-			 </div>	
+			 </div>
 	 <!-- script-for-menu -->
 						<script>
 							 $( "span.menu" ).click(function() {
@@ -74,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						</script>
 					<!-- /script-for-menu -->
-			 
+
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
@@ -92,91 +102,75 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			pager:true,
 		  });
 		});
-		
+
 	   </script>
 	 <div class="slider">
 		  <div class="callbacks_container">
 			  <ul class="rslides" id="slider">
-				
+
 					<div class="slid banner1">
 						  <div class="caption">
 								<h3>Create your own Group</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					</div>
-				
-				
-					 <div class="slid banner2">	
+
+
+					 <div class="slid banner2">
 						  <div class="caption">
 								<h3>Strengthen your skills</h3>
 								<p>Create a team, play in your groups, create connections.</p>
 						  </div>
 					 </div>
-				
-				
-					<div class="slid banner3">	
+
+
+					<div class="slid banner3">
 						<div class="caption">
 							<h3>Be resepectful to your other group members.</h3>
 							<p>Create a team, play in your groups, create connections.</p>
 						</div>
 					</div>
-				
+
 			  </ul>
 		 </div>
 	 </div>
 
 <!-- content -->
-<div class="content" style="background-color:white>
+<div class="content">
 	 <div class="container">
 		<div class='row'>
 			<?php
 	            $sql = "SELECT * FROM groups";
 	            $result = $conn->query($sql);
 
+	            // $sql2 = "SELECT fk_user_id FROM tags where fk_group=1";
+
 	            if($result->num_rows > 0) {
 	                while($row = $result->fetch_assoc()) {
 	                    echo "
 	                    		<div class='col-md-4 col-lg-4 col-4'>
-	                    			<h1>
+	                    			<h1><a href='group.php?id=".$row['groups_id']."'>
 	                    				".$row['group_name']."
+	                    				</a>
 	                    			</h1>
 	                    			<h4>".$row['scheduling']."</h4>
 	                    			<h4>".$row['target_audience']."</h4>
 	                    			<p>".$row['description']."</p>
 	                    			<span>".$row['open_spots']."</span>
-									
-									<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
+	                    			</div>";
+							if ($data_admin == 1) {
+								echo
+								"<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
 	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
-	                    		</div>
-
-	                            ";
+	                            </div>
+	                    		";
+							};	
 	                }
 	            } else {
 	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
 	            }
+	            $conn->close();
 	        ?>
-	        <div style="float: right; flex-wrap: wrap; display: flex-wrap">
-	        	
-	        <script id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
-    {
-        "handle": "findmygame123",
-        "arch": "js",
-        "styles": {
-            "a": "000066",
-            "b": 100,
-            "c": "FFFFFF",
-            "d": "FFFFFF",
-            "k": "000066",
-            "l": "000066",
-            "m": "000066",
-            "n": "FFFFFF",
-            "p": "10",
-            "q": "000066",
-            "r": 100,
-            "fwtickm": 1
-        }
-    }
-</script></div>
 
 	       </div>
 	        <a href="create.php"><button type="button">Add New Group</button></a>
@@ -299,7 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 <div class="copywrite">
 	 <div class="container">
-		 <p> © 2015 Game Box. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		 <p> © 2018 findmygame. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 	 </div>
 </div>
 <!---->

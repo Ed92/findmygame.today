@@ -63,9 +63,9 @@
       $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
       if( $count == 1 && $row['user_pass']==$password ) {
 
-        $_SESSION['user'] = $row['userId'];
-        header("Location: home.php");
-
+        $_SESSION['user'] = $row['user_id'];
+        header("Location: home.php?id=".$_SESSION['user']."");
+        // echo $_SESSION['user'];
       } else {
 
         $errMSG = "Incorrect Credentials, Try again...";
@@ -74,7 +74,6 @@
     }
   }
 
-require_once 'parts/head.php'
 
 ?>
 <!DOCTYPE html>
