@@ -1,3 +1,4 @@
+
 <?php
 	require_once 'actions/db_connect.php';
 
@@ -134,10 +135,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </ul>
 		 </div>
 	 </div>
-
+<div style="flex-wrap:wrap; display: flex-wrap; ">
+	
 <!-- content -->
 <div class="content">
 	 <div class="container">
+	 	<a href="create.php"><button type="button">Add New Group</button></a>
+		
 		<div class='row'>
 			<?php
 	            $sql = "SELECT * FROM groups";
@@ -157,14 +161,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	                    			<h4>".$row['target_audience']."</h4>
 	                    			<p>".$row['description']."</p>
 	                    			<span>".$row['open_spots']."</span>
-	                    			</div>";
+	                    			";
 							if ($data_admin == 1) {
 								echo
 								"<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
 	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
-	                            </div>
+	                            
 	                    		";
-							};	
+							};
+							echo "</div>";	
 	                }
 	            } else {
 	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
@@ -172,8 +177,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            $conn->close();
 	        ?>
 
+		</div>
+
+		<script id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
+			    {
+			        "handle": "findmygame123",
+			        "arch": "js",
+			        "styles": {
+			            "a": "000066",
+			            "b": 100,
+			            "c": "FFFFFF",
+			            "d": "FFFFFF",
+			            "k": "000066",
+			            "l": "000066",
+			            "m": "000066",
+			            "n": "FFFFFF",
+			            "p": "10",
+			            "q": "000066",
+			            "r": 100,
+			            "fwtickm": 1
+			        }
+			    }
+
+			</script>
 	       </div>
-	        <a href="create.php"><button type="button">Add New Group</button></a>
+	        
 
 		 <div class="top-games">
 			 <h3>Top Games</h3>
@@ -299,3 +327,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 </body>
 </html>
+
