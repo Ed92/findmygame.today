@@ -1,3 +1,17 @@
+<?php 
+	require_once 'actions/db_connect.php';
+
+	ob_start();
+	session_start();
+
+	$res=mysqli_query($conn, "SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+	// echo $_SESSION['user'];
+	$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+	$data_admin = $userRow['user_type'];
+	// $row = $result->fetch_assoc()
+ ?>
+
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -93,15 +107,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!----> 
 <div class="gallery">
 	<div class="container">
-		<h2>Viktoria Herzer</h2>
+
+		<h2><?php echo $userRow['user_name']; ?></h2>
 			
 		<div class="card" style="width: 60rem; padding-left: 200px">
-  			<img  style="height: 150px"class="card-img-top" src="images/pika.jpg" alt="Card image cap">
+  			
+  			<img  style="height: 150px"class="card-img-top" src="images/<?php echo $userRow['avatar']; ?>" alt="Card image cap">
   				
 			  <ul class="list-group list-group-flush">
-			    <li class="list-group-item">COD Black Ops, UFC3</li>
-			    <li class="list-group-item">panthergirl31</li>
-			    
+			    <li class="list-group-item"> <h4>Email: <?php echo $userRow['user_email']; ?></h4></li>
+			    <li class="list-group-item"><h4>Birthday: <?php echo $userRow['dob']; ?></h4></li>
+			    <li class="list-group-item"><h4>Discordname: <?php echo $userRow['discord']; ?></h4></li>
+			    <li class="list-group-item"><h4>Fave games: <?php echo $userRow['favorite_game']; ?></h4></li>
 			  </ul>
 
 		</div>
@@ -157,3 +174,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 </body>
 </html>
+<?php $conn->close(); ?>
