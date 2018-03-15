@@ -126,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
 
 <!-- content -->
-<div class="content">
+<div class="content" style="background-color: white;>
 	 <div class="container">
 		<div class='row'>
 			<?php
@@ -155,6 +155,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
 	            }
 	        ?>
+	        <div style="float: right; flex-wrap: wrap; display: flex-wrap">
+	        	
+	        <script id="cid0020000182096925487" data-cfasync="false" async src="http://st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">
+    {
+        "handle": "findmygame123",
+        "arch": "js",
+        "styles": {
+            "a": "000066",
+            "b": 100,
+            "c": "FFFFFF",
+            "d": "FFFFFF",
+            "k": "000066",
+            "l": "000066",
+            "m": "000066",
+            "n": "FFFFFF",
+            "p": "10",
+            "q": "000066",
+            "r": 100,
+            "fwtickm": 1
+        }
+    }
+</script></div>
+
 	       </div>
 	        <a href="create.php"><button type="button">Add New Group</button></a>
 
