@@ -1,5 +1,16 @@
 <?php 
 	require_once 'actions/db_connect.php';
+
+	ob_start();
+	session_start();
+
+	$res=mysqli_query($conn, "SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+	// echo $_SESSION['user'];
+	$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+	$data_admin = $userRow['user_type'];
+
+	
 ?>
 <!--A Design by W3layouts
 Author: W3layout
@@ -133,27 +144,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            $sql = "SELECT * FROM groups";
 	            $result = $conn->query($sql);
 
+	            // $sql2 = "SELECT fk_user_id FROM tags where fk_group=1";
+
 	            if($result->num_rows > 0) {
 	                while($row = $result->fetch_assoc()) {
 	                    echo "
 	                    		<div class='col-md-4 col-lg-4 col-4'>
-	                    			<h1>
+	                    			<h1><a href='group.php?id=".$row['group_id']."'>
 	                    				".$row['group_name']."
+	                    				</a>
 	                    			</h1>
 	                    			<h4>".$row['scheduling']."</h4>
 	                    			<h4>".$row['target_audience']."</h4>
 	                    			<p>".$row['description']."</p>
 	                    			<span>".$row['open_spots']."</span>
-									
-									<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
+	                    			</div>";
+							if ($data_admin == 1) {
+								echo
+								"<a href='update.php?id=".$row['groups_id']."'><button type='button'>Edit</button></a>
 	                            	<a href='delete.php?id=".$row['groups_id']."'><button type='button'>Delete</button></a>
-	                    		</div>
-
-	                            ";
+	                    		</div>";
+							};	
 	                }
 	            } else {
 	               echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
 	            }
+	            $conn->close();
 	        ?>
 	       </div>
 	        <a href="create.php"><button type="button">Add New Group</button></a>
