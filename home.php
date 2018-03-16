@@ -128,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					<div class="slid banner3">
 						<div class="caption">
-							<h3>Be resepectful to your other group members.</h3>
+							<h3>Be respectful to your other group members.</h3>
 							<p>Create a team, play in your groups, create connections.</p>
 						</div>
 					</div>
