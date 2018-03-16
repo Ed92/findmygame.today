@@ -2,24 +2,38 @@
 <html>
 <head>
     <title>PHP CRUD  |  Add User</title>
-    <style type="text/css">
-        fieldset {
-            margin: auto;
-            margin-top: 100px;
-            width: 50%;
-        }
-        table tr th {
-           padding-top: 20px;
-        }
-    </style>
+       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script src="js/bootstrap.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style1.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="js/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+    body{
+        background-color: black;
+        height: 800px;
+    }
+</style>
 </head>
 <body>
 <fieldset>
-    <legend>Add New Group</legend>
+    <div class="update_tabel">
+        <h1>Add New Group</h1>
 
     <form action="actions/a_create.php" method="post">
 
-        <table cellspacing="0" cellpadding="0">
+        <table cellspacing="0" cellpadding="0" class="table">
 
             <tr>
 
@@ -63,9 +77,9 @@
 
             <tr>
 
-                <td><button type="submit">Submit Group</button></td>
+                <td><button type="submit" class="btn">Submit Group</button></td>
 
-                <td><a href="home.php"><button type="button">Back</button></a></td>
+                <td><a href="home.php"><button type="button" class="btn">Back</button></a></td>
 
             </tr>
 
@@ -73,6 +87,8 @@
 
     </form>
 
+    </div>
+    
  
 
 </fieldset>

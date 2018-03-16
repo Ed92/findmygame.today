@@ -25,5 +25,11 @@ body{
 	padding: 10px;
 	box-shadow: 10px 10px 10px 0px gray;
 }
+.update_tabel{
+	margin: 100px;
+	background-color: #F0F0F0;
+	padding: 10px;
+	border-radius: 10px;
+}
 
 /* .content   style="background-color: black; color:white;" */
