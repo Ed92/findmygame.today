@@ -76,10 +76,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </tr>
 
             <tr>
-
+                <td><a href="home.php"><button type="button" class="btn">Back</button></a></td>
+                
                 <td><button type="submit" class="btn">Submit Group</button></td>
 
-                <td><a href="home.php"><button type="button" class="btn">Back</button></a></td>
+                
 
             </tr>
 
